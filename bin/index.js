@@ -1,11 +1,11 @@
 const fs = require('fs')
+const speaker = require('speaker')
 const player = require('../lib')
 
 function render(mod) {
   process.stdout.moveCursor(0,-1)
   console.log(mod.position);
-  mod.read(2048)
-  setTimeout(render.bind(null, mod), 10);
+  setTimeout(render.bind(null, mod), 100);
 }
 
 fs.readFile(process.argv[2], function(err, data) {
@@ -23,6 +23,7 @@ fs.readFile(process.argv[2], function(err, data) {
       process.stdin.resume();
       process.stdin.on('data', process.exit.bind(process, 0));
 
-      render(mod);
+//      render(mod);
+      mod.pipe(new speaker())
   }
 });
