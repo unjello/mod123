@@ -2,9 +2,6 @@
   "name": "mod123",
   "version": "0.0.1",
   "description": "minimalistic ndjson logger for pino",
-  "bin": {
-    "mod123": "./bin/bin.js"
-  },
   "repository": "unjello/mod-player",
   "main": "lib/index.js",
   "scripts": {
@@ -24,7 +21,7 @@
     "standard": "^12.0.1"
   },
   "dependencies": {
-    "speaker": "^0.4.1",
+    "debug": "^4.1.1",
     "stream": "0.0.2"
   }
 }
